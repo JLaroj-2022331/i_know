@@ -110,12 +110,12 @@ Serial.println("El bombillo 4, ha sido desactivado.");
 digitalWrite(relay_4, HIGH);
 break;
 
-case '9':
+case 'b':
 ServoCuarto.write(90);
 Serial.println("Cuarto Abierto");
 break;
 
-case '10':
+case 'c':
    ServoCuarto.write(0);
    Serial.println("Cuarto Cerrado");  
 break;
@@ -189,8 +189,20 @@ case '20':
    Serial.println("Patio apagado");  
 break;
 }
+if(valor==char("b"))
+{
+ServoCuarto.write(90);
+Serial.println("Cuarto Abierto");  
+}
+
+if(valor==char("c"))
+{
+ServoCuarto.write(0);
+Serial.println("Cuarto Cerrado"); 
+}
 
 }
+
 //Si el puerto serie (Bluetooth) está disponible
 if (Serial.available())
 {
